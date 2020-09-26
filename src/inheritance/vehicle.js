@@ -1,18 +1,23 @@
 class Vehicle {
-  engines = 1
+  constructor(engines = 1) {
+    this.engines = engines;
+  }
 
   ignition() {
-    console.log('Turning on my engine');
+    console.log("Turning on my engine");
   }
 
   drive() {
     this.ignition();
-    console.log('Steering and moving forward');
+    console.log("Steering and moving forward");
   }
 }
 
-class Card extends Vehicle {
-  wheels = 4
+class Car extends Vehicle {
+  constructor(wheels = 4) {
+    super();
+    this.wheels = wheels;
+  }
 
   drive() {
     super.drive();
@@ -21,13 +26,18 @@ class Card extends Vehicle {
 }
 
 class SpeedBoat extends Vehicle {
-  engines = 2
+  constructor(engines = 2) {
+    super(engines);
+  }
 
   ignition() {
-    console.log(`Turning on my ${this.engines} engines`)
+    console.log(`Turning on my ${this.engines} engines`);
   }
 
   pilot() {
-    console.log('Speeding through the water with ease')
+    console.log("Speeding through the water with ease");
   }
 }
+
+const car = new Car(10);
+car.drive();
