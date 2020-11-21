@@ -8,5 +8,8 @@ Foo.prototype.getFullName = function() {
 };
 
 var foo = new Foo("Pezhman", "Parsaee");
+var bar = new Foo("John", "Doe");
 
 console.log(foo.getFullName());
+console.log(bar.getFullName());
+console.log(Object.getPrototypeOf(foo) === Object.getPrototypeOf(bar));
